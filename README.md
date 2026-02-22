@@ -1,37 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Instagram Lite
+
+A high-performance, responsive social media application built with the Next.js App Router, Tailwind CSS, and MongoDB. This project replicates the core features and design aesthetics of Instagram with a focus on speed, user experience, and a modern developer workflow.
+
+---
+
+## Technical Stack
+
+*   Frontend: Next.js (App Router), React 19, Tailwind CSS 4
+*   Backend: Next.js Server Actions, MongoDB with Mongoose
+*   Authentication: Custom Auth with bcryptjs password hashing
+*   Icons: React Icons
+*   Deployment: Optimized for Vercel
+
+---
+
+## Core Features
+
+*   **Responsive Design**: Pixel-perfect replication of Instagram's UI for mobile and desktop views.
+*   **Authentication**: Secure login and signup flows with route protection and password hashing.
+*   **Dynamic Layouts**: Route grouping logic to handle different navigation states (Auth vs App).
+*   **Production Models**: Scalable Mongoose schemas for Users, Posts, and Interactions.
+*   **Aesthetic UI**: Dark-mode primary design with glassmorphism and modern typography.
+
+---
+
+## Folder Structure
+
+```text
+├── app/
+│   ├── (auth)/         # Login/Signup route group (No Sidebar)
+│   ├── (main)/         # Main application group (With Sidebar)
+│   ├── Components/      # Reusable UI components
+│   └── globals.css     # Global styles and Tailwind config
+├── Models/             # Mongoose schemas and database logic
+├── public/             # Static assets
+└── next.config.ts      # Next.js configuration
+```
+
+---
+
+## Database Schema (User Model)
+
+The user model is designed for high-scale social interactions including:
+*   Username & Email indexing for fast lookups
+*   Automatic password hashing hooks
+*   Followers/Following relationship arrays
+*   Post and Saved Post references
+*   Virtual properties for analytics (counts)
+
+---
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to set up the project locally:
 
+### 1. Prerequisites
+Ensure you have Node.js and a MongoDB instance (or Atlas URI) ready.
+
+### 2. Installation
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Environment Variables
+Create a `.env.local` file in the root and add:
+```env
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 4. Run Development Server
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The application will be available at [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Production Optimization
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+*   **Server Actions**: Minimizes client-side JavaScript by offloading logic to the server.
+*   **Route Groups**: Optimal layout rendering for different page types.
+*   **Mongoose Virtuals**: Efficient data representation without redundant storage.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# instagram-lite
+This project is open-source and available under the MIT License.
