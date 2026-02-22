@@ -23,7 +23,7 @@ const Stories = () => {
 ]
 
   return (
-    <main className="border-b md:w-2/3 w-full h-[20vh]  overflow-hidden">
+    <main className="border-b w-full h-[20vh]  overflow-hidden">
       <section className="flex gap-5 px-4 items-center">
 
         {stories.map((story, i) => (
