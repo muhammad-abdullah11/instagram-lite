@@ -33,7 +33,7 @@ export default function RootLayout({
             <PcNavbar />
           </aside>
           <section className="flex-1">
-            <div className="mx-auto max-w-5xl px-4 py-8 md:px-8">
+            <div className="mx-auto max-w-5xl p-4 md:px-8">
               {children}
             </div>
           </section>
