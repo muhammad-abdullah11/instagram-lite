@@ -1,10 +1,63 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { FaChevronLeft } from 'react-icons/fa6';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { signIn } from 'next-auth/react';
 
 const SignupPage = () => {
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    name: "",
+    userName: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.message || "Something went wrong");
+      }
+
+      // Automatically sign in after signup
+      const result = await signIn("credentials", {
+        redirect: false,
+        identifier: formData.email,
+        password: formData.password,
+      });
+
+      if (result?.error) {
+        setError("User created, but failed to log in automatically.");
+      } else {
+        router.push("/");
+      }
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="w-full max-w-[400px] flex flex-col items-center py-12">
       <div className="w-full flex items-center justify-between mb-8 px-2 md:px-0">
@@ -22,57 +75,72 @@ const SignupPage = () => {
       <div className="w-full flex flex-col items-start px-2 md:px-0">
         <h1 className="text-2xl font-bold mb-2">Get started on Instagram</h1>
         <p className="text-[#a8a8a8] text-sm mb-8">Sign up to see photos and videos from your friends.</p>
-        <form className="w-full flex flex-col gap-6">
+
+        {error && (
+          <div className="w-full bg-red-500/10 border border-red-500/50 text-red-500 text-xs py-3 px-4 rounded-lg mb-4 text-center">
+            {error}
+          </div>
+        )}
+
+        <form onSubmit={handleSubmit} className="w-full flex flex-col gap-6">
           <div className="flex flex-col gap-2">
             <label className="text-xs font-semibold">Mobile number or email</label>
             <input
+              required
               type="text"
-              className="w-full bg-[#1c1c1c] border border-[#363636] rounded-lg px-4 py-3 text-sm outline-none focus:border-gray-500"
+              name="email"
+              placeholder='example@gmail.com'
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full bg-[#1c1c1c] border border-[#363636] rounded-lg px-4 py-3 text-sm outline-none focus:border-gray-500 transition-colors"
             />
           </div>
           <div className="flex flex-col gap-2">
             <label className="text-xs font-semibold">Password</label>
             <input
+              required
               type="password"
-              className="w-full bg-[#1c1c1c] border border-[#363636] rounded-lg px-4 py-3 text-sm outline-none focus:border-gray-500"
+              name="password"
+              placeholder='********'
+              value={formData.password}
+              onChange={handleChange}
+              className="w-full bg-[#1c1c1c] border border-[#363636] rounded-lg px-4 py-3 text-sm outline-none focus:border-gray-500 transition-colors"
             />
           </div>
-          <div className="flex flex-col gap-2">
-            <label className="text-xs font-semibold">Date of birth</label>
-            <div className="grid grid-cols-3 gap-2">
-              <select className="bg-[#1c1c1c] border border-[#363636] rounded-lg px-4 py-3 text-sm outline-none">
-                <option>Day</option>
-                {Array.from({ length: 31 }, (_, i) => <option key={i + 1}>{i + 1}</option>)}
-              </select>
-              <select className="bg-[#1c1c1c] border border-[#363636] rounded-lg px-4 py-3 text-sm outline-none">
-                <option>Month</option>
-                {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].map(m => <option key={m}>{m}</option>)}
-              </select>
-              <select className="bg-[#1c1c1c] border border-[#363636] rounded-lg px-4 py-3 text-sm outline-none">
-                <option>Year</option>
-                {Array.from({ length: 100 }, (_, i) => <option key={i}>{2026 - i}</option>)}
-              </select>
-            </div>
-          </div>
+
           <div className="flex flex-col gap-2">
             <label className="text-xs font-semibold">Name</label>
             <input
+              required
               type="text"
-              className="w-full bg-[#1c1c1c] border border-[#363636] rounded-lg px-4 py-3 text-sm outline-none focus:border-gray-500"
+              name="name"
+              placeholder='Your Full Name'
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full bg-[#1c1c1c] border border-[#363636] rounded-lg px-4 py-3 text-sm outline-none focus:border-gray-500 transition-colors"
             />
           </div>
           <div className="flex flex-col gap-2">
             <label className="text-xs font-semibold">Username</label>
             <input
+              required
               type="text"
-              className="w-full bg-[#1c1c1c] border border-[#363636] rounded-lg px-4 py-3 text-sm outline-none focus:border-gray-500"
+              name="userName"
+              placeholder='Your Username'
+              value={formData.userName}
+              onChange={handleChange}
+              className="w-full bg-[#1c1c1c] border border-[#363636] rounded-lg px-4 py-3 text-sm outline-none focus:border-gray-500 transition-colors"
             />
           </div>
-          <button className="w-full bg-[#0095f6] hover:bg-[#1877f2] text-white font-semibold rounded-lg py-2.5 text-sm">
-            Submit
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full bg-[#0095f6] hover:bg-[#1877f2] disabled:bg-[#0095f6]/50 disabled:cursor-not-allowed text-white font-semibold rounded-lg py-2.5 text-sm transition-colors"
+          >
+            {loading ? "Creating account..." : "Submit"}
           </button>
         </form>
-        <Link href="/login" className="w-full border border-[#363636] hover:bg-white/5 rounded-lg py-2.5 mt-4 text-sm font-semibold text-center">
+        <Link href="/login" className="w-full border border-[#363636] hover:bg-white/5 rounded-lg py-2.5 mt-4 text-sm font-semibold text-center transition-colors">
           I already have an account
         </Link>
       </div>
