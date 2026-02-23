@@ -1,94 +1,82 @@
+"use client"
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 
-
-type Suggestion = {
+type UserSuggestion = {
+  _id: string
   username: string
-  name: string
-  img: string
-  isFollowing: boolean
+  fullName: string
+  profilePicture: string
 }
 
-const suggestions: Suggestion[] = [
-  {
-    username: "ali_dev",
-    name: "Ali Khan",
-    img: "https://images.unsplash.com/photo-1707396172167-95af235efc98?w=600",
-    isFollowing: false,
-  },
-  {
-    username: "sophia.styles",
-    name: "Sophia Williams",
-    img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600",
-    isFollowing: false,
-  },
-  {
-    username: "muhammad_codes",
-    name: "Muhammad Ali",
-    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600",
-    isFollowing: true,
-  },
-  {
-    username: "alexander_the_great",
-    name: "Alexander",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600",
-    isFollowing: false,
-  },
-  {
-    username: "zara",
-    name: "Zara Noor",
-    img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600",
-    isFollowing: true,
-  },
-  {
-    username: "noah_world",
-    name: "Noah Johnson",
-    img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600",
-    isFollowing: false,
-  },
-  {
-    username: "isabella_rose_official",
-    name: "Isabella Rose",
-    img: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600",
-    isFollowing: false,
-  },
-]
-
 const AsideBar = () => {
+  const [users, setUsers] = useState<UserSuggestion[]>([])
+  const [loading, setLoading] = useState(true)
+
+  const fetchAllUsers = async () => {
+    try {
+      setLoading(true)
+      const res = await axios.get("/api/users");
+      if (res.data.success) {
+        setUsers(res.data.data)
+      }
+    } catch (error) {
+      console.error("Failed to fetch users:", error)
+    } finally {
+      setLoading(false)
+    }
+  };
+
+  useEffect(() => {
+    fetchAllUsers()
+  }, [])
+
   return (
     <aside className="w-full max-w-sm p-4">
-        <h2 className='font-semibold py-4 font-serif'>Suggested for you </h2>
+      <h2 className='font-semibold py-4 font-serif text-lg'>Suggested for you</h2>
       <section className='flex flex-col gap-4'>
-        {suggestions?.map((sug,i)=>(
-
-            <section className="flex items-center justify-between" key={i}>
-
-        <div className="flex items-center gap-3">
-          
-          <div className="relative h-12 w-12 rounded-full overflow-hidden">
-            <Image
-              src={sug.img}
-              alt="profile"
-              fill
-              className="object-cover"
-            />
-          </div>
-
-          <div className="flex flex-col leading-tight">
-            <h2 className="font-semibold text-sm">{sug.name}</h2>
-            <p className="text-gray-500 text-sm">{sug.username}</p>
-          </div>
-
-        </div>
-
-        <button className="text-blue-500 text-sm font-semibold hover:text-blue-700 transition">
-          Follow
-        </button>
-
-      </section>
+        {loading ? (
+          <div className="flex flex-col gap-4 animate-pulse">
+            {[1, 2, 3, 4, 5].map((i) => (
+              <div key={i} className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="h-12 w-12 rounded-full bg-zinc-800" />
+                  <div className="flex flex-col gap-2">
+                    <div className="h-4 w-24 bg-zinc-800 rounded" />
+                    <div className="h-3 w-16 bg-zinc-800 rounded" />
+                  </div>
+                </div>
+                <div className="h-8 w-16 bg-zinc-800 rounded" />
+              </div>
             ))}
-            </section>  
-
+          </div>
+        ) : users.length > 0 ? (
+          users.map((user) => (
+            <section className="flex items-center justify-between" key={user._id}>
+              <div className="flex items-center gap-3">
+                <div className="relative h-12 w-12 rounded-full overflow-hidden border border-zinc-800">
+                  <Image
+                    src={user.profilePicture || ""}
+                    alt={user.fullName}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="flex flex-col leading-tight">
+                  <h2 className="font-semibold text-sm">{user.fullName}</h2>
+                  <p className="text-gray-500 text-xs">@{user.username}</p>
+                </div>
+              </div>
+              <button className="text-[#0095f6] hover:text-[#1877f2] text-xs font-bold transition-colors">
+                Follow
+              </button>
+            </section>
+          ))
+        ) : (
+          <p className="text-gray-500 text-sm italic">No suggestions found</p>
+        )}
+      </section>
     </aside>
   )
 }

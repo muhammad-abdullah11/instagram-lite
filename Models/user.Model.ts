@@ -60,7 +60,7 @@ const userSchema = new Schema<IUser>(
         },
         profilePicture: {
             type: String,
-            default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAd59Y_8P9InNis97v7-O4N6fAnH60T7qBCA&s",
+            default: "https://plus.unsplash.com/premium_photo-1739786996022-5ed5b56834e2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHVzZXIlMjBhdmF0YXJ8ZW58MHx8MHx8fDA%3D",
         },
         followers: [
             {
