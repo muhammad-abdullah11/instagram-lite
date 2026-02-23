@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { RiHomeHeartLine } from "react-icons/ri";
 import { FaInstagram } from "react-icons/fa6";
@@ -5,13 +7,20 @@ import { BiSolidVideos } from "react-icons/bi";
 import { LuMessageCircleHeart } from "react-icons/lu";
 import { CiSquarePlus } from "react-icons/ci";
 import { MdOutlineExplore } from "react-icons/md";
+import { CiLogout } from "react-icons/ci";
+import { signOut } from "next-auth/react";
 
 type NavLink = {
   name: string;
   icon: React.ElementType;
+  action?: () => void;
 };
 
 const PcNavbar = () => {
+  const handleLogout = () => {
+    signOut({ callbackUrl: "/login" });
+  };
+
   const navLinks: NavLink[] = [
     { name: "", icon: FaInstagram },
     { name: "Home", icon: RiHomeHeartLine },
@@ -19,6 +28,7 @@ const PcNavbar = () => {
     { name: "Messages", icon: LuMessageCircleHeart },
     { name: "New Post", icon: CiSquarePlus },
     { name: "Explore", icon: MdOutlineExplore },
+    { name: "Logout", icon: CiLogout, action: handleLogout }
   ];
 
   return (
@@ -28,6 +38,7 @@ const PcNavbar = () => {
         return (
           <div
             key={link.name || index}
+            onClick={link.action}
             className="flex items-center gap-4 transition-all duration-200 cursor-pointer hover:bg-foreground/10 p-2 rounded-lg md:w-full group relative"
           >
             <Icon size={24} className="shrink-0 transition-transform group-hover:scale-105" />

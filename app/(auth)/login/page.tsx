@@ -1,12 +1,52 @@
 "use client";
 
+import React, { useState } from 'react';
 import { FaFacebook } from 'react-icons/fa6';
 import Image from 'next/image';
 import Link from 'next/link';
+import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 const LoginPage = () => {
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [formData, setFormData] = useState({
+    identifier: "",
+    password: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+
+    try {
+      const result = await signIn("credentials", {
+        redirect: false,
+        identifier: formData.identifier,
+        password: formData.password,
+      });
+
+      if (result?.error) {
+        setError(result.error);
+      } else {
+        router.push("/");
+        router.refresh(); // Ensure the session is updated
+      }
+    } catch (err: any) {
+      setError("An unexpected error occurred. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center px-4 py-8 md:py-0">
+    <div className="flex flex-col md:flex-row items-center justify-center px-4 py-8 md:py-0 min-h-screen">
       <div className="hidden md:flex flex-col items-center justify-center max-w-lg mr-12 lg:mr-24 mb-12 md:mb-0">
         <div className="mb-8 self-center">
           <svg aria-label="Instagram" color="white" fill="white" height="96" role="img" viewBox="0 0 24 24" width="96">
@@ -14,9 +54,9 @@ const LoginPage = () => {
           </svg>
         </div>
         <h1 className="text-3xl lg:text-4xl font-bold text-center max-w-sm mb-12 leading-tight">
-          See everyday moments from your <span className="bg-linear-to-r from-orange-400 via-pink-600 to-purple-600 bg-clip-text text-transparent">close friends.</span>
+          See everyday moments from your <span className="bg-gradient-to-r from-orange-400 via-pink-600 to-purple-600 bg-clip-text text-transparent">close friends.</span>
         </h1>
-        <div className="relative w-full max-w-96 h-95">
+        <div className="relative w-full max-w-96 h-96">
           <Image
             fill
             src="https://static.cdninstagram.com/rsrc.php/v4/yt/r/pAv7hjq-51n.png"
@@ -25,25 +65,41 @@ const LoginPage = () => {
           />
         </div>
       </div>
-      <div className="w-full max-w-87 flex flex-col items-center">
+      <div className="w-full max-w-[350px] flex flex-col items-center">
         <div className="w-full bg-[#121212] md:bg-black border md:border-none border-[#262626] rounded-xl p-8 flex flex-col items-center">
           <h2 className="text-xl font-semibold mb-8 self-start">Log in to Instagram</h2>
-          <form className="w-full flex flex-col gap-3">
+
+          {error && (
+            <div className="w-full bg-red-500/10 border border-red-500/50 text-red-500 text-xs py-3 px-4 rounded-lg mb-4 text-center">
+              {error}
+            </div>
+          )}
+
+          <form onSubmit={handleSubmit} className="w-full flex flex-col gap-3">
             <input
+              required
               type="text"
+              name="identifier"
               placeholder="Username or email"
-              className="w-full bg-[#1c1c1c] border border-[#363636] rounded-md px-3 py-3 text-sm focus:outline-none focus:border-gray-500 placeholder-gray-500"
+              value={formData.identifier}
+              onChange={handleChange}
+              className="w-full bg-[#1c1c1c] border border-[#363636] rounded-md px-3 py-3 text-sm focus:outline-none focus:border-gray-500 placeholder-gray-500 transition-colors"
             />
             <input
+              required
               type="password"
+              name="password"
               placeholder="Password"
-              className="w-full bg-[#1c1c1c] border border-[#363636] rounded-md px-3 py-3 text-sm focus:outline-none focus:border-gray-500 placeholder-gray-500"
+              value={formData.password}
+              onChange={handleChange}
+              className="w-full bg-[#1c1c1c] border border-[#363636] rounded-md px-3 py-3 text-sm focus:outline-none focus:border-gray-500 placeholder-gray-500 transition-colors"
             />
             <button
               type="submit"
-              className="w-full bg-[#0095f6] hover:bg-[#1877f2] transition-colors text-white font-semibold rounded-lg py-2 mt-4 text-sm"
+              disabled={loading}
+              className="w-full bg-[#0095f6] hover:bg-[#1877f2] disabled:bg-[#0095f6]/50 disabled:cursor-not-allowed transition-colors text-white font-semibold rounded-lg py-2 mt-4 text-sm"
             >
-              Log in
+              {loading ? "Logging in..." : "Log in"}
             </button>
           </form>
           <a href="#" className="text-sm mt-6 hover:opacity-70">
@@ -53,7 +109,7 @@ const LoginPage = () => {
             <FaFacebook className="text-[#1877f2] size-5" />
             <span className="text-sm font-semibold">Log in with Facebook</span>
           </div>
-          <Link href="/signup" className="w-full border border-[#363636] hover:bg-white/5 rounded-lg py-2 mt-6 text-sm font-semibold text-center">
+          <Link href="/signup" className="w-full border border-[#363636] hover:bg-white/5 rounded-lg py-2 mt-6 text-sm font-semibold text-center transition-colors">
             Create new account
           </Link>
         </div>
