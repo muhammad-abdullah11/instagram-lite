@@ -7,9 +7,7 @@ export interface IPost extends Document {
         url: string;
         type: "image" | "video";
     }[];
-    location?: {
-        name: string;
-    };
+    location?: string;
     taggedUsers: {
         user: mongoose.Types.ObjectId;
     }[];
@@ -26,38 +24,39 @@ const postSchema = new Schema<IPost>(
         user: {
             type: Schema.Types.ObjectId,
             ref: "User",
-            required: [true, "Post must belong to a user"],
+            required: true,
             index: true,
         },
         caption: {
             type: String,
             trim: true,
-            maxlength: [2200, "Caption cannot exceed 2200 characters"],
+            maxlength: 2200,
             default: "",
         },
         media: [
             {
                 url: {
                     type: String,
-                    required: [true, "Media URL is required"],
+                    required: true,
                 },
                 type: {
                     type: String,
                     enum: ["image", "video"],
                     default: "image",
-                }
+                    required: true,
+                },
             },
         ],
         location: {
             type: String,
-            trim: true
+            trim: true,
         },
         taggedUsers: [
             {
                 user: {
                     type: Schema.Types.ObjectId,
                     ref: "User",
-                }
+                },
             },
         ],
         likes: [
@@ -91,8 +90,8 @@ const postSchema = new Schema<IPost>(
 
 postSchema.index({ createdAt: -1 });
 postSchema.index({ hashtags: 1 });
-postSchema.index({ mentions: 1 });
 
-const Post: Model<IPost> = mongoose.models.Post || mongoose.model<IPost>("Post", postSchema);
+const Post: Model<IPost> =
+    mongoose.models.Post || mongoose.model<IPost>("Post", postSchema);
 
 export default Post;
