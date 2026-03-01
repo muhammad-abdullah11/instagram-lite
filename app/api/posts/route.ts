@@ -110,3 +110,23 @@ export async function POST(req: NextRequest) {
     }
 }
 
+export async function GET(req: NextRequest) {
+    const session = await getServerSession(authOptions);
+    if (!session?.user) {
+        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+    try {
+        await connectDB();
+
+        const posts = await Post.find({ user: session.user.id })
+            .populate("user", "username fullName profilePicture")
+
+        return NextResponse.json({ posts }, { status: 200 });
+    } catch (error: any) {
+        console.error("Get Posts Error:", error);
+        return NextResponse.json(
+            { error: error.message || "Internal Server Error" },
+            { status: 500 }
+        );
+    }
+}

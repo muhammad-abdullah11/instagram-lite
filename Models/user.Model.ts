@@ -119,13 +119,6 @@ userSchema.methods.matchPassword = async function (password: string) {
     return await bcrypt.compare(password, this.password);
 };
 
-userSchema.virtual("followersCount").get(function () {
-    return this.followers.length;
-});
-
-userSchema.virtual("followingCount").get(function () {
-    return this.following.length;
-});
 
 const User: Model<IUser> = mongoose.models.User || mongoose.model<IUser>("User", userSchema);
 

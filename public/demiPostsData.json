@@ -1,0 +1,772 @@
+[
+    {
+        "_id": "64f1a2b3c4d5e6f7a8b9c001",
+        "user": "64e0a1b2c3d4e5f6a7b8c901",
+        "caption": "Golden hour never disappoints 🌅 Chasing sunsets across the world one frame at a time.",
+        "media": [
+            {
+                "url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1080&q=80",
+                "type": "image"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=1080&q=80",
+                "type": "image"
+            }
+        ],
+        "location": "Santorini, Greece",
+        "taggedUsers": [
+            {
+                "user": "64e0a1b2c3d4e5f6a7b8c902"
+            },
+            {
+                "user": "64e0a1b2c3d4e5f6a7b8c903"
+            }
+        ],
+        "likes": [
+            "64e0a1b2c3d4e5f6a7b8c902",
+            "64e0a1b2c3d4e5f6a7b8c904",
+            "64e0a1b2c3d4e5f6a7b8c905"
+        ],
+        "hashtags": [
+            "sunset",
+            "photography",
+            "travel",
+            "santorini",
+            "goldenhour"
+        ],
+        "allowComments": true,
+        "hideLikes": false,
+        "createdAt": "2024-08-01T07:23:11.000Z",
+        "updatedAt": "2024-08-01T07:23:11.000Z"
+    },
+    {
+        "_id": "64f1a2b3c4d5e6f7a8b9c002",
+        "user": "64e0a1b2c3d4e5f6a7b8c902",
+        "caption": "Morning coffee ritual ☕ There's nothing better than starting the day with a slow brew and good vibes.",
+        "media": [
+            {
+                "url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1080&q=80",
+                "type": "image"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1080&q=80",
+                "type": "image"
+            }
+        ],
+        "location": "New York, USA",
+        "taggedUsers": [],
+        "likes": [
+            "64e0a1b2c3d4e5f6a7b8c901",
+            "64e0a1b2c3d4e5f6a7b8c906",
+            "64e0a1b2c3d4e5f6a7b8c907"
+        ],
+        "hashtags": [
+            "coffee",
+            "morningroutine",
+            "lifestyle",
+            "coffeelover"
+        ],
+        "allowComments": true,
+        "hideLikes": false,
+        "createdAt": "2024-08-02T08:10:00.000Z",
+        "updatedAt": "2024-08-02T08:10:00.000Z"
+    },
+    {
+        "_id": "64f1a2b3c4d5e6f7a8b9c003",
+        "user": "64e0a1b2c3d4e5f6a7b8c903",
+        "caption": "No days off 💪 Consistency is the key to every transformation. Keep showing up.",
+        "media": [
+            {
+                "url": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1080&q=80",
+                "type": "image"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=1080&q=80",
+                "type": "image"
+            }
+        ],
+        "location": "Los Angeles, USA",
+        "taggedUsers": [
+            {
+                "user": "64e0a1b2c3d4e5f6a7b8c907"
+            }
+        ],
+        "likes": [
+            "64e0a1b2c3d4e5f6a7b8c901",
+            "64e0a1b2c3d4e5f6a7b8c902",
+            "64e0a1b2c3d4e5f6a7b8c905",
+            "64e0a1b2c3d4e5f6a7b8c908"
+        ],
+        "hashtags": [
+            "fitness",
+            "workout",
+            "gym",
+            "motivation",
+            "noexcuses"
+        ],
+        "allowComments": true,
+        "hideLikes": true,
+        "createdAt": "2024-08-03T06:45:30.000Z",
+        "updatedAt": "2024-08-03T06:45:30.000Z"
+    },
+    {
+        "_id": "64f1a2b3c4d5e6f7a8b9c004",
+        "user": "64e0a1b2c3d4e5f6a7b8c904",
+        "caption": "Lost in the streets of Tokyo 🗼 Every corner tells a different story. Absolutely mesmerizing city.",
+        "media": [
+            {
+                "url": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1080&q=80",
+                "type": "image"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=1080&q=80",
+                "type": "image"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=1080&q=80",
+                "type": "image"
+            }
+        ],
+        "location": "Tokyo, Japan",
+        "taggedUsers": [
+            {
+                "user": "64e0a1b2c3d4e5f6a7b8c903"
+            },
+            {
+                "user": "64e0a1b2c3d4e5f6a7b8c909"
+            }
+        ],
+        "likes": [
+            "64e0a1b2c3d4e5f6a7b8c901",
+            "64e0a1b2c3d4e5f6a7b8c902",
+            "64e0a1b2c3d4e5f6a7b8c903",
+            "64e0a1b2c3d4e5f6a7b8c910",
+            "64e0a1b2c3d4e5f6a7b8c911"
+        ],
+        "hashtags": [
+            "japan",
+            "travel",
+            "tokyo",
+            "streetphotography",
+            "asia"
+        ],
+        "allowComments": true,
+        "hideLikes": false,
+        "createdAt": "2024-08-04T12:00:00.000Z",
+        "updatedAt": "2024-08-04T12:00:00.000Z"
+    },
+    {
+        "_id": "64f1a2b3c4d5e6f7a8b9c005",
+        "user": "64e0a1b2c3d4e5f6a7b8c905",
+        "caption": "Homemade pasta from scratch 🍝 Flour, eggs, and a whole lot of love. Recipe saved in highlights!",
+        "media": [
+            {
+                "url": "https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=1080&q=80",
+                "type": "image"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=1080&q=80",
+                "type": "image"
+            }
+        ],
+        "location": "Milan, Italy",
+        "taggedUsers": [],
+        "likes": [
+            "64e0a1b2c3d4e5f6a7b8c901",
+            "64e0a1b2c3d4e5f6a7b8c904",
+            "64e0a1b2c3d4e5f6a7b8c907",
+            "64e0a1b2c3d4e5f6a7b8c912"
+        ],
+        "hashtags": [
+            "food",
+            "pasta",
+            "homecooking",
+            "recipe",
+            "italian",
+            "foodie"
+        ],
+        "allowComments": false,
+        "hideLikes": false,
+        "createdAt": "2024-08-05T13:30:00.000Z",
+        "updatedAt": "2024-08-05T13:30:00.000Z"
+    },
+    {
+        "_id": "64f1a2b3c4d5e6f7a8b9c006",
+        "user": "64e0a1b2c3d4e5f6a7b8c906",
+        "caption": "Behind the lens in the city of light 🎬 Paris never gets old.",
+        "media": [
+            {
+                "url": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1080&q=80",
+                "type": "image"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1080&q=80",
+                "type": "image"
+            }
+        ],
+        "location": "Paris, France",
+        "taggedUsers": [
+            {
+                "user": "64e0a1b2c3d4e5f6a7b8c912"
+            }
+        ],
+        "likes": [
+            "64e0a1b2c3d4e5f6a7b8c901",
+            "64e0a1b2c3d4e5f6a7b8c903",
+            "64e0a1b2c3d4e5f6a7b8c905",
+            "64e0a1b2c3d4e5f6a7b8c913"
+        ],
+        "hashtags": [
+            "photography",
+            "paris",
+            "france",
+            "travel",
+            "citylights"
+        ],
+        "allowComments": true,
+        "hideLikes": true,
+        "createdAt": "2024-08-06T09:15:00.000Z",
+        "updatedAt": "2024-08-06T09:15:00.000Z"
+    },
+    {
+        "_id": "64f1a2b3c4d5e6f7a8b9c007",
+        "user": "64e0a1b2c3d4e5f6a7b8c907",
+        "caption": "Summited at 4,478m 🏔️ Every step of the climb was worth it. The Alps are absolutely unreal.",
+        "media": [
+            {
+                "url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1080&q=80",
+                "type": "image"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=1080&q=80",
+                "type": "image"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1080&q=80",
+                "type": "image"
+            }
+        ],
+        "location": "Swiss Alps, Switzerland",
+        "taggedUsers": [
+            {
+                "user": "64e0a1b2c3d4e5f6a7b8c908"
+            },
+            {
+                "user": "64e0a1b2c3d4e5f6a7b8c909"
+            }
+        ],
+        "likes": [
+            "64e0a1b2c3d4e5f6a7b8c901",
+            "64e0a1b2c3d4e5f6a7b8c902",
+            "64e0a1b2c3d4e5f6a7b8c906",
+            "64e0a1b2c3d4e5f6a7b8c911",
+            "64e0a1b2c3d4e5f6a7b8c914",
+            "64e0a1b2c3d4e5f6a7b8c915"
+        ],
+        "hashtags": [
+            "hiking",
+            "mountains",
+            "adventure",
+            "swissalps",
+            "nature",
+            "climbing"
+        ],
+        "allowComments": true,
+        "hideLikes": false,
+        "createdAt": "2024-08-07T16:00:00.000Z",
+        "updatedAt": "2024-08-07T16:00:00.000Z"
+    },
+    {
+        "_id": "64f1a2b3c4d5e6f7a8b9c008",
+        "user": "64e0a1b2c3d4e5f6a7b8c908",
+        "caption": "New single just dropped 🎵 Wrote this one at 3am — sometimes the best songs come from the darkest hours. Link in bio.",
+        "media": [
+            {
+                "url": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1080&q=80",
+                "type": "image"
+            }
+        ],
+        "location": "Nashville, USA",
+        "taggedUsers": [],
+        "likes": [
+            "64e0a1b2c3d4e5f6a7b8c902",
+            "64e0a1b2c3d4e5f6a7b8c903",
+            "64e0a1b2c3d4e5f6a7b8c912",
+            "64e0a1b2c3d4e5f6a7b8c913",
+            "64e0a1b2c3d4e5f6a7b8c914"
+        ],
+        "hashtags": [
+            "music",
+            "newrelease",
+            "singer",
+            "artist",
+            "indiemusic"
+        ],
+        "allowComments": true,
+        "hideLikes": false,
+        "createdAt": "2024-08-08T20:00:00.000Z",
+        "updatedAt": "2024-08-08T20:00:00.000Z"
+    },
+    {
+        "_id": "64f1a2b3c4d5e6f7a8b9c009",
+        "user": "64e0a1b2c3d4e5f6a7b8c909",
+        "caption": "My fur baby turned 3 today 🐶🎂 Three years of chaos, cuddles, and unconditional love. Best boy ever.",
+        "media": [
+            {
+                "url": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1080&q=80",
+                "type": "image"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=1080&q=80",
+                "type": "image"
+            }
+        ],
+        "location": "London, UK",
+        "taggedUsers": [],
+        "likes": [
+            "64e0a1b2c3d4e5f6a7b8c901",
+            "64e0a1b2c3d4e5f6a7b8c905",
+            "64e0a1b2c3d4e5f6a7b8c908",
+            "64e0a1b2c3d4e5f6a7b8c915"
+        ],
+        "hashtags": [
+            "dogsofinstagram",
+            "dogstagram",
+            "puppy",
+            "goldenretriever",
+            "petlover"
+        ],
+        "allowComments": true,
+        "hideLikes": false,
+        "createdAt": "2024-08-09T11:00:00.000Z",
+        "updatedAt": "2024-08-09T11:00:00.000Z"
+    },
+    {
+        "_id": "64f1a2b3c4d5e6f7a8b9c010",
+        "user": "64e0a1b2c3d4e5f6a7b8c910",
+        "caption": "Reading corner goals 📚 Just finished my 30th book of the year. What should I read next? Drop recs below!",
+        "media": [
+            {
+                "url": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=1080&q=80",
+                "type": "image"
+            }
+        ],
+        "location": "Copenhagen, Denmark",
+        "taggedUsers": [
+            {
+                "user": "64e0a1b2c3d4e5f6a7b8c911"
+            }
+        ],
+        "likes": [
+            "64e0a1b2c3d4e5f6a7b8c902",
+            "64e0a1b2c3d4e5f6a7b8c904",
+            "64e0a1b2c3d4e5f6a7b8c906"
+        ],
+        "hashtags": [
+            "books",
+            "reading",
+            "bookstagram",
+            "booklover",
+            "readingchallenge"
+        ],
+        "allowComments": true,
+        "hideLikes": false,
+        "createdAt": "2024-08-10T14:20:00.000Z",
+        "updatedAt": "2024-08-10T14:20:00.000Z"
+    },
+    {
+        "_id": "64f1a2b3c4d5e6f7a8b9c011",
+        "user": "64e0a1b2c3d4e5f6a7b8c911",
+        "caption": "First surf session of the season 🏄 Wiped out 6 times, caught 2 waves. The ocean always wins.",
+        "media": [
+            {
+                "url": "https://images.unsplash.com/photo-1455264745730-cb3b76250511?w=1080&q=80",
+                "type": "image"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=1080&q=80",
+                "type": "image"
+            }
+        ],
+        "location": "Bali, Indonesia",
+        "taggedUsers": [
+            {
+                "user": "64e0a1b2c3d4e5f6a7b8c903"
+            },
+            {
+                "user": "64e0a1b2c3d4e5f6a7b8c907"
+            }
+        ],
+        "likes": [
+            "64e0a1b2c3d4e5f6a7b8c901",
+            "64e0a1b2c3d4e5f6a7b8c904",
+            "64e0a1b2c3d4e5f6a7b8c908",
+            "64e0a1b2c3d4e5f6a7b8c912",
+            "64e0a1b2c3d4e5f6a7b8c913"
+        ],
+        "hashtags": [
+            "surfing",
+            "ocean",
+            "bali",
+            "waves",
+            "beachlife",
+            "surf"
+        ],
+        "allowComments": true,
+        "hideLikes": false,
+        "createdAt": "2024-08-11T07:30:00.000Z",
+        "updatedAt": "2024-08-11T07:30:00.000Z"
+    },
+    {
+        "_id": "64f1a2b3c4d5e6f7a8b9c012",
+        "user": "64e0a1b2c3d4e5f6a7b8c912",
+        "caption": "Interior refresh complete 🛋️ Finally redecorated my living room. Minimal, warm, cozy — just how I like it.",
+        "media": [
+            {
+                "url": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1080&q=80",
+                "type": "image"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1080&q=80",
+                "type": "image"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1080&q=80",
+                "type": "image"
+            }
+        ],
+        "location": "Stockholm, Sweden",
+        "taggedUsers": [],
+        "likes": [
+            "64e0a1b2c3d4e5f6a7b8c905",
+            "64e0a1b2c3d4e5f6a7b8c910",
+            "64e0a1b2c3d4e5f6a7b8c914"
+        ],
+        "hashtags": [
+            "interiordesign",
+            "homedecor",
+            "minimal",
+            "cozy",
+            "livingroom"
+        ],
+        "allowComments": true,
+        "hideLikes": true,
+        "createdAt": "2024-08-12T15:45:00.000Z",
+        "updatedAt": "2024-08-12T15:45:00.000Z"
+    },
+    {
+        "_id": "64f1a2b3c4d5e6f7a8b9c013",
+        "user": "64e0a1b2c3d4e5f6a7b8c913",
+        "caption": "Street food crawl in Bangkok 🌶️🍜 We hit 11 stalls in one night and had zero regrets. Pure bliss.",
+        "media": [
+            {
+                "url": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1080&q=80",
+                "type": "image"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1080&q=80",
+                "type": "image"
+            }
+        ],
+        "location": "Bangkok, Thailand",
+        "taggedUsers": [
+            {
+                "user": "64e0a1b2c3d4e5f6a7b8c904"
+            },
+            {
+                "user": "64e0a1b2c3d4e5f6a7b8c905"
+            }
+        ],
+        "likes": [
+            "64e0a1b2c3d4e5f6a7b8c901",
+            "64e0a1b2c3d4e5f6a7b8c902",
+            "64e0a1b2c3d4e5f6a7b8c906",
+            "64e0a1b2c3d4e5f6a7b8c909",
+            "64e0a1b2c3d4e5f6a7b8c915"
+        ],
+        "hashtags": [
+            "streetfood",
+            "bangkok",
+            "thailand",
+            "foodie",
+            "travel",
+            "asianfood"
+        ],
+        "allowComments": true,
+        "hideLikes": false,
+        "createdAt": "2024-08-13T19:00:00.000Z",
+        "updatedAt": "2024-08-13T19:00:00.000Z"
+    },
+    {
+        "_id": "64f1a2b3c4d5e6f7a8b9c014",
+        "user": "64e0a1b2c3d4e5f6a7b8c914",
+        "caption": "Autumn is here and I am NOT complaining 🍂 The forest trails near my house are absolutely unreal right now.",
+        "media": [
+            {
+                "url": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=1080&q=80",
+                "type": "image"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6?w=1080&q=80",
+                "type": "image"
+            }
+        ],
+        "location": "Vancouver, Canada",
+        "taggedUsers": [
+            {
+                "user": "64e0a1b2c3d4e5f6a7b8c910"
+            }
+        ],
+        "likes": [
+            "64e0a1b2c3d4e5f6a7b8c901",
+            "64e0a1b2c3d4e5f6a7b8c907",
+            "64e0a1b2c3d4e5f6a7b8c911",
+            "64e0a1b2c3d4e5f6a7b8c913"
+        ],
+        "hashtags": [
+            "autumn",
+            "fall",
+            "nature",
+            "forest",
+            "hiking",
+            "canada"
+        ],
+        "allowComments": true,
+        "hideLikes": false,
+        "createdAt": "2024-08-14T10:10:00.000Z",
+        "updatedAt": "2024-08-14T10:10:00.000Z"
+    },
+    {
+        "_id": "64f1a2b3c4d5e6f7a8b9c015",
+        "user": "64e0a1b2c3d4e5f6a7b8c915",
+        "caption": "Late night debugging sessions hit different when the code finally works 👨‍💻",
+        "media": [
+            {
+                "url": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1080&q=80",
+                "type": "image"
+            }
+        ],
+        "location": "Berlin, Germany",
+        "taggedUsers": [],
+        "likes": [
+            "64e0a1b2c3d4e5f6a7b8c902",
+            "64e0a1b2c3d4e5f6a7b8c908"
+        ],
+        "hashtags": [
+            "coding",
+            "developer",
+            "webdev",
+            "tech",
+            "programming"
+        ],
+        "allowComments": false,
+        "hideLikes": true,
+        "createdAt": "2024-08-15T22:00:00.000Z",
+        "updatedAt": "2024-08-15T22:00:00.000Z"
+    },
+    {
+        "_id": "64f1a2b3c4d5e6f7a8b9c016",
+        "user": "64e0a1b2c3d4e5f6a7b8c901",
+        "caption": "Yoga at sunrise on the rooftop 🧘‍♀️ Starting the week with intention and stillness. Your mind is everything.",
+        "media": [
+            {
+                "url": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1080&q=80",
+                "type": "image"
+            }
+        ],
+        "location": "Ubud, Bali",
+        "taggedUsers": [
+            {
+                "user": "64e0a1b2c3d4e5f6a7b8c911"
+            }
+        ],
+        "likes": [
+            "64e0a1b2c3d4e5f6a7b8c903",
+            "64e0a1b2c3d4e5f6a7b8c905",
+            "64e0a1b2c3d4e5f6a7b8c912",
+            "64e0a1b2c3d4e5f6a7b8c914"
+        ],
+        "hashtags": [
+            "yoga",
+            "mindfulness",
+            "wellness",
+            "sunrise",
+            "bali",
+            "morningyoga"
+        ],
+        "allowComments": true,
+        "hideLikes": false,
+        "createdAt": "2024-08-16T05:45:00.000Z",
+        "updatedAt": "2024-08-16T05:45:00.000Z"
+    },
+    {
+        "_id": "64f1a2b3c4d5e6f7a8b9c017",
+        "user": "64e0a1b2c3d4e5f6a7b8c906",
+        "caption": "Portrait series vol.3 🖤 Shot on a spontaneous walk through the medina. Strangers make the best subjects.",
+        "media": [
+            {
+                "url": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1080&q=80",
+                "type": "image"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=1080&q=80",
+                "type": "image"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=1080&q=80",
+                "type": "image"
+            }
+        ],
+        "location": "Marrakech, Morocco",
+        "taggedUsers": [],
+        "likes": [
+            "64e0a1b2c3d4e5f6a7b8c901",
+            "64e0a1b2c3d4e5f6a7b8c904",
+            "64e0a1b2c3d4e5f6a7b8c907",
+            "64e0a1b2c3d4e5f6a7b8c909",
+            "64e0a1b2c3d4e5f6a7b8c913",
+            "64e0a1b2c3d4e5f6a7b8c915"
+        ],
+        "hashtags": [
+            "portrait",
+            "photography",
+            "blackandwhite",
+            "morocco",
+            "streetphotography"
+        ],
+        "allowComments": true,
+        "hideLikes": false,
+        "createdAt": "2024-08-17T17:30:00.000Z",
+        "updatedAt": "2024-08-17T17:30:00.000Z"
+    },
+    {
+        "_id": "64f1a2b3c4d5e6f7a8b9c018",
+        "user": "64e0a1b2c3d4e5f6a7b8c913",
+        "caption": "Snowboard season is officially OPEN ⛷️❄️ First run of the year and I already ate snow twice. No regrets.",
+        "media": [
+            {
+                "url": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=1080&q=80",
+                "type": "image"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=1080&q=80",
+                "type": "image"
+            }
+        ],
+        "location": "Whistler, Canada",
+        "taggedUsers": [
+            {
+                "user": "64e0a1b2c3d4e5f6a7b8c907"
+            },
+            {
+                "user": "64e0a1b2c3d4e5f6a7b8c914"
+            }
+        ],
+        "likes": [
+            "64e0a1b2c3d4e5f6a7b8c902",
+            "64e0a1b2c3d4e5f6a7b8c903",
+            "64e0a1b2c3d4e5f6a7b8c908",
+            "64e0a1b2c3d4e5f6a7b8c911"
+        ],
+        "hashtags": [
+            "snowboarding",
+            "winter",
+            "snow",
+            "mountains",
+            "whistler",
+            "ski"
+        ],
+        "allowComments": true,
+        "hideLikes": false,
+        "createdAt": "2024-08-18T09:00:00.000Z",
+        "updatedAt": "2024-08-18T09:00:00.000Z"
+    },
+    {
+        "_id": "64f1a2b3c4d5e6f7a8b9c019",
+        "user": "64e0a1b2c3d4e5f6a7b8c910",
+        "caption": "Desert nights hit different 🌌 Slept under 10,000 stars in the Sahara and felt genuinely small for once.",
+        "media": [
+            {
+                "url": "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1080&q=80",
+                "type": "image"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1080&q=80",
+                "type": "image"
+            }
+        ],
+        "location": "Sahara Desert, Morocco",
+        "taggedUsers": [
+            {
+                "user": "64e0a1b2c3d4e5f6a7b8c906"
+            }
+        ],
+        "likes": [
+            "64e0a1b2c3d4e5f6a7b8c901",
+            "64e0a1b2c3d4e5f6a7b8c904",
+            "64e0a1b2c3d4e5f6a7b8c905",
+            "64e0a1b2c3d4e5f6a7b8c907",
+            "64e0a1b2c3d4e5f6a7b8c912",
+            "64e0a1b2c3d4e5f6a7b8c915"
+        ],
+        "hashtags": [
+            "sahara",
+            "desert",
+            "stargazing",
+            "milkyway",
+            "nightsky",
+            "travel",
+            "morocco"
+        ],
+        "allowComments": true,
+        "hideLikes": false,
+        "createdAt": "2024-08-19T00:30:00.000Z",
+        "updatedAt": "2024-08-19T00:30:00.000Z"
+    },
+    {
+        "_id": "64f1a2b3c4d5e6f7a8b9c020",
+        "user": "64e0a1b2c3d4e5f6a7b8c915",
+        "caption": "Shipped v2.0 of my side project today 🚀 18 months of nights and weekends finally live. Thank you to everyone who beta tested and believed in this.",
+        "media": [
+            {
+                "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1080&q=80",
+                "type": "image"
+            },
+            {
+                "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1080&q=80",
+                "type": "image"
+            }
+        ],
+        "location": "San Francisco, USA",
+        "taggedUsers": [
+            {
+                "user": "64e0a1b2c3d4e5f6a7b8c908"
+            },
+            {
+                "user": "64e0a1b2c3d4e5f6a7b8c903"
+            }
+        ],
+        "likes": [
+            "64e0a1b2c3d4e5f6a7b8c901",
+            "64e0a1b2c3d4e5f6a7b8c902",
+            "64e0a1b2c3d4e5f6a7b8c904",
+            "64e0a1b2c3d4e5f6a7b8c906",
+            "64e0a1b2c3d4e5f6a7b8c909",
+            "64e0a1b2c3d4e5f6a7b8c911",
+            "64e0a1b2c3d4e5f6a7b8c912"
+        ],
+        "hashtags": [
+            "startup",
+            "buildinpublic",
+            "developer",
+            "launch",
+            "tech",
+            "webdev",
+            "saas"
+        ],
+        "allowComments": true,
+        "hideLikes": false,
+        "createdAt": "2024-08-20T18:00:00.000Z",
+        "updatedAt": "2024-08-20T18:00:00.000Z"
+    }
+]
