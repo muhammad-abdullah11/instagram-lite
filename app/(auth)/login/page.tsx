@@ -54,7 +54,7 @@ const LoginPage = () => {
           </svg>
         </div>
         <h1 className="text-3xl lg:text-4xl font-bold text-center max-w-sm mb-12 leading-tight">
-          See everyday moments from your <span className="bg-gradient-to-r from-orange-400 via-pink-600 to-purple-600 bg-clip-text text-transparent">close friends.</span>
+          See everyday moments from your <span className="bg-linear-to-r from-orange-400 via-pink-600 to-purple-600 bg-clip-text text-transparent">close friends.</span>
         </h1>
         <div className="relative w-full max-w-96 h-96">
           <Image
@@ -65,7 +65,7 @@ const LoginPage = () => {
           />
         </div>
       </div>
-      <div className="w-full max-w-[350px] flex flex-col items-center">
+      <div className="w-full max-w-87 flex flex-col items-center">
         <div className="w-full bg-[#121212] md:bg-black border md:border-none border-[#262626] rounded-xl p-8 flex flex-col items-center">
           <h2 className="text-xl font-semibold mb-8 self-start">Log in to Instagram</h2>
 
