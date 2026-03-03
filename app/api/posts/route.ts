@@ -111,15 +111,19 @@ export async function POST(req: NextRequest) {
 }
 
 export async function GET(req: NextRequest) {
-    const session = await getServerSession(authOptions);
-    if (!session?.user) {
-        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
+    await connectDB();
     try {
-        await connectDB();
+        const session = await getServerSession(authOptions);
+        if (!session?.user) {
+            return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+        }
 
-        const posts = await Post.find({ user: session.user.id })
+
+        const posts = await Post.find()
             .populate("user", "username fullName profilePicture")
+            .sort({ createdAt: -1 })
+            .limit(20)
+            .lean();
 
         return NextResponse.json({ posts }, { status: 200 });
     } catch (error: any) {

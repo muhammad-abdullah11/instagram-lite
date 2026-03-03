@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react"
 import Post from "./Post"
 import axios from "axios"
-import DummyPosts from "@/public/dummyPostsData.json"
 
 interface PostType {
   _id: string
@@ -16,13 +15,15 @@ const Posts = () => {
 
   const fetchPosts = async () => {
     try {
-      const res = await axios.get<{ posts: PostType[] }>("/api/posts")
-      setPosts(res.data.posts)
-    } catch (err) {
-      setPosts(DummyPosts as PostType[])
-      if (err instanceof Error) {
-        setError(err.message)
-      }
+      const res = await axios.get("/api/posts")
+      const fetchedPosts = res.data.posts ?? []
+      setPosts(fetchedPosts)
+    } catch (err: any) {
+      const message =
+        err?.response?.data?.error ||
+        err?.message ||
+        "Failed to load posts"
+      setError(message)
     } finally {
       setLoading(false)
     }
@@ -33,16 +34,24 @@ const Posts = () => {
   }, [])
 
   return (
-    <main className="border-t py-4 my-4 flex flex-col items-center justify-center">
-      {error && <p>{error}</p>}
+    <main className="border-t flex flex-col items-center w-full py-2">
+      {error && <p className="text-red-400 text-sm py-4">{error}</p>}
 
       {loading ? (
         <>
           <SkeletonLoading />
           <SkeletonLoading />
+          <SkeletonLoading />
         </>
+      ) : posts.length === 0 ? (
+        <div className="flex flex-col items-center justify-center py-20 text-zinc-500 gap-3">
+          <span className="text-5xl">📷</span>
+          <p className="text-sm">No posts yet. Be the first to share!</p>
+        </div>
       ) : (
-        posts.map((post) => <Post key={post._id} post={post} />)
+        <div className="w-full">
+          {posts.map((post) => <Post key={post._id} post={post} />)}
+        </div>
       )}
     </main>
   )
@@ -52,30 +61,31 @@ export default Posts
 
 const SkeletonLoading = () => {
   return (
-    <div className="bg-black shadow-2xl pt-6 border-b border-b-zinc-400 h-full w-full md:w-2/3 px-2 md:px-8 relative pb-4 animate-pulse">
-      <div className="flex gap-3 relative items-center">
-        <div className="size-12 rounded-full bg-zinc-700" />
-        <div className="flex flex-col gap-2">
-          <div className="h-3 w-32 bg-zinc-700 rounded" />
-          <div className="h-2 w-16 bg-zinc-600 rounded" />
+    <div className="w-full max-w-[470px] mx-auto border-b border-zinc-800 mb-1 animate-pulse">
+      <div className="flex items-center gap-3 px-3 py-3">
+        <div className="size-10 rounded-full bg-zinc-800 shrink-0" />
+        <div className="flex flex-col gap-2 flex-1">
+          <div className="h-3 w-28 bg-zinc-800 rounded" />
+          <div className="h-2 w-16 bg-zinc-800 rounded" />
         </div>
-        <div className="absolute right-3 h-4 w-4 bg-zinc-700 rounded" />
+        <div className="h-4 w-4 bg-zinc-800 rounded ml-auto" />
       </div>
 
-      <div className="h-80 my-4 w-full bg-zinc-700 rounded-lg" />
+      <div className="w-full aspect-square bg-zinc-800" />
 
-      <div className="flex gap-4 p-2 items-center">
-        <div className="h-6 w-6 bg-zinc-700 rounded-full" />
-        <div className="h-6 w-6 bg-zinc-700 rounded-full" />
-        <div className="h-6 w-6 bg-zinc-700 rounded-full" />
-        <div className="h-6 w-6 bg-zinc-700 rounded-full absolute right-8" />
-      </div>
-
-      <div className="flex flex-col gap-2 mt-2">
-        <div className="h-3 w-40 bg-zinc-700 rounded" />
-        <div className="h-3 w-full bg-zinc-700 rounded" />
-        <div className="h-3 w-3/4 bg-zinc-700 rounded" />
+      <div className="px-3 pt-3 pb-4">
+        <div className="flex gap-4 mb-3">
+          <div className="h-6 w-6 bg-zinc-800 rounded-full" />
+          <div className="h-6 w-6 bg-zinc-800 rounded-full" />
+          <div className="h-6 w-6 bg-zinc-800 rounded-full" />
+          <div className="h-6 w-6 bg-zinc-800 rounded-full ml-auto" />
+        </div>
+        <div className="h-3 w-20 bg-zinc-800 rounded mb-2" />
+        <div className="h-3 w-full bg-zinc-800 rounded mb-1" />
+        <div className="h-3 w-3/4 bg-zinc-800 rounded" />
       </div>
     </div>
   )
 }
+
+

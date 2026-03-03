@@ -48,7 +48,7 @@ const Toggle: React.FC<ToggleProps> = ({ label, description, checked, onToggle }
             role="switch"
             aria-checked={checked}
             onClick={onToggle}
-            className={`relative w-11 h-6 rounded-full transition-colors duration-200 cursor-pointer flex-shrink-0
+            className={`relative w-11 h-6 rounded-full transition-colors duration-200 cursor-pointer shrink-0
         ${checked ? "bg-white" : "bg-[#3a3d44]"}`}
         >
             <span
@@ -264,7 +264,7 @@ const Uploads: React.FC<UploadsProps> = ({ type }) => {
                 className={`bg-[#1c1f23] rounded-2xl overflow-hidden border border-[#2a2d33]
           shadow-[0_24px_80px_rgba(0,0,0,0.8)] transition-all duration-500 ${containerWidth}`}
             >
-                <div className="flex items-center justify-between px-4 py-[14px] border-b border-[#2a2d33]">
+                <div className="flex items-center justify-between px-4 py-3.5 border-b border-[#2a2d33]">
                     {file ? (
                         <button
                             type="button"
@@ -308,7 +308,7 @@ const Uploads: React.FC<UploadsProps> = ({ type }) => {
                 )}
                 {error && (
                     <div className="flex items-center gap-2 px-4 py-2 bg-red-500/10 border-b border-red-500/20">
-                        <IoCloseCircle size={16} className="text-red-400 flex-shrink-0" />
+                        <IoCloseCircle size={16} className="text-red-400 shrink-0" />
                         <p className="text-red-400 text-xs flex-1">{error}</p>
                         <button
                             type="button"
@@ -323,10 +323,10 @@ const Uploads: React.FC<UploadsProps> = ({ type }) => {
                 {!file ? (
                     <DropZone type={type} onFile={handleFile} onError={setError} />
                 ) : (
-                    <div className={`flex ${isPost ? "h-[560px]" : "h-auto"}`}>
+                    <div className={`flex ${isPost ? "h-140" : "h-auto"}`}>
                         <div
-                            className={`relative flex-shrink-0 bg-black flex items-center justify-center overflow-hidden
-                ${isPost ? "w-[500px]" : "w-full"}`}
+                            className={`relative shrink-0 bg-black flex items-center justify-center overflow-hidden
+                ${isPost ? "w-125" : "w-full"}`}
                         >
                             {isVideo ? (
                                 <video
@@ -336,7 +336,7 @@ const Uploads: React.FC<UploadsProps> = ({ type }) => {
                                     className="w-full h-full object-contain"
                                 />
                             ) : (
-                                <img
+                                <Image
                                     src={preview!}
                                     alt={file.name}
                                     className="w-full h-full object-contain"
@@ -344,10 +344,10 @@ const Uploads: React.FC<UploadsProps> = ({ type }) => {
                             )}
 
                             {!isPost && (
-                                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-5">
+                                <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/80 via-black/30 to-transparent p-5">
                                     <div className="flex items-center justify-between">
                                         <div className="flex items-center gap-2.5">
-                                            <div className="w-8 h-8 rounded-full overflow-hidden bg-[#2a2d33] flex-shrink-0 relative ring-2 ring-[#1877f2]">
+                                            <div className="w-8 h-8 rounded-full overflow-hidden bg-[#2a2d33] shrink-0 relative ring-2 ring-[#1877f2]">
                                                 {profilePicture ? (
                                                     <Image
                                                         src={profilePicture}
@@ -357,7 +357,7 @@ const Uploads: React.FC<UploadsProps> = ({ type }) => {
                                                         className="object-cover w-full h-full"
                                                     />
                                                 ) : (
-                                                    <div className="w-full h-full flex items-center justify-center text-white text-xs font-bold bg-gradient-to-br from-purple-500 to-pink-500">
+                                                    <div className="w-full h-full flex items-center justify-center text-white text-xs font-bold bg-linear-to-br from-purple-500 to-pink-500">
                                                         {username[0]?.toUpperCase()}
                                                     </div>
                                                 )}
@@ -389,7 +389,7 @@ const Uploads: React.FC<UploadsProps> = ({ type }) => {
                         {isPost && (
                             <div className="flex-1 flex flex-col border-l border-[#2a2d33] overflow-y-auto min-w-0">
                                 <div className="flex items-center gap-3 px-4 py-3 border-b border-[#2a2d33]">
-                                    <div className="w-8 h-8 rounded-full overflow-hidden bg-[#2a2d33] flex-shrink-0 relative">
+                                    <div className="w-8 h-8 rounded-full overflow-hidden bg-[#2a2d33] shrink-0 relative">
                                         {profilePicture ? (
                                             <Image
                                                 src={profilePicture}
@@ -399,7 +399,7 @@ const Uploads: React.FC<UploadsProps> = ({ type }) => {
                                                 className="object-cover w-full h-full"
                                             />
                                         ) : (
-                                            <div className="w-full h-full flex items-center justify-center text-white text-xs font-bold bg-gradient-to-br from-purple-500 to-pink-500">
+                                            <div className="w-full h-full flex items-center justify-center text-white text-xs font-bold bg-linear-to-br from-purple-500 to-pink-500">
                                                 {username[0]?.toUpperCase()}
                                             </div>
                                         )}
@@ -440,7 +440,7 @@ const Uploads: React.FC<UploadsProps> = ({ type }) => {
                                         aria-label="Location"
                                         className="w-full bg-transparent text-white text-sm placeholder-[#8a8f9e] outline-none"
                                     />
-                                    <IoLocationOutline size={18} className="text-[#8a8f9e] flex-shrink-0 ml-2" />
+                                    <IoLocationOutline size={18} className="text-[#8a8f9e] shrink-0 ml-2" />
                                 </div>
 
                                 <div className="px-4 py-3 border-b border-[#2a2d33]">
@@ -462,9 +462,9 @@ const Uploads: React.FC<UploadsProps> = ({ type }) => {
                                 </div>
 
                                 <div className="px-4 py-3 flex items-center gap-3 mt-auto border-t border-[#2a2d33]">
-                                    <div className="w-8 h-8 rounded-lg bg-[#252830] flex-shrink-0 overflow-hidden border border-[#2a2d33]">
+                                    <div className="w-8 h-8 rounded-lg bg-[#252830] shrink-0 overflow-hidden border border-[#2a2d33]">
                                         {!isVideo && (
-                                            <img src={preview!} alt="thumb" className="w-full h-full object-cover rounded-lg" />
+                                            <Image src={preview!} alt="thumb" className="w-full h-full object-cover rounded-lg" />
                                         )}
                                         {isVideo && (
                                             <div className="w-full h-full flex items-center justify-center">
@@ -482,7 +482,7 @@ const Uploads: React.FC<UploadsProps> = ({ type }) => {
                                     <button
                                         type="button"
                                         onClick={() => fileInputRef.current?.click()}
-                                        className="text-[#1877f2] hover:text-[#1468d8] text-xs font-semibold flex-shrink-0 transition-colors cursor-pointer"
+                                        className="text-[#1877f2] hover:text-[#1468d8] text-xs font-semibold shrink-0 transition-colors cursor-pointer"
                                     >
                                         Change
                                     </button>
