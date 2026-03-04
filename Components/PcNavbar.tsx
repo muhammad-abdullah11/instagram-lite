@@ -8,15 +8,16 @@ import { LuMessageCircleHeart } from "react-icons/lu";
 import { CiSquarePlus } from "react-icons/ci";
 import { MdOutlineExplore } from "react-icons/md";
 import { CiLogout } from "react-icons/ci";
+import { CgProfile } from "react-icons/cg";
+
 
 import { useRouter } from "next/navigation";
-
 import { signOut } from "next-auth/react";
 
 type NavLink = {
   name: string;
   icon: React.ElementType;
-  link:string;
+  link: string;
   action?: () => void;
 };
 
@@ -28,14 +29,15 @@ const PcNavbar = () => {
   const router = useRouter();
 
   const navLinks: NavLink[] = [
-    { name: "", icon: FaInstagram , link:"/" },
-    { name: "Home", icon: RiHomeHeartLine , link:"/"},
-    { name: "Reels", icon: BiSolidVideos , link:"/reels"},
-    { name: "Messages", icon: LuMessageCircleHeart , link:"/messages"},
-    { name: "New Post", icon: CiSquarePlus , link:"/create-post"},
-    { name: "New Story", icon: CiSquarePlus , link:"/create-story"},
-    { name: "Explore", icon: MdOutlineExplore , link:"/explore"},
-    { name: "Logout", icon: CiLogout, action: handleLogout , link:"/"}
+    { name: "", icon: FaInstagram, link: "/" },
+    { name: "Home", icon: RiHomeHeartLine, link: "/" },
+    { name: "Reels", icon: BiSolidVideos, link: "/reels" },
+    { name: "Messages", icon: LuMessageCircleHeart, link: "/messages" },
+    { name: "New Post", icon: CiSquarePlus, link: "/create-post" },
+    { name: "New Story", icon: CiSquarePlus, link: "/create-story" },
+    { name: "Explore", icon: MdOutlineExplore, link: "/explore" },
+    { name: "Profile", icon: CgProfile, link: "/profile" },
+    { name: "Logout", icon: CiLogout, action: handleLogout, link: "/" }
   ];
 
   return (
@@ -56,8 +58,8 @@ const PcNavbar = () => {
           >
             <Icon size={24} className="shrink-0 transition-transform group-hover:scale-105" />
             {link.name && (
-              <span 
-              className="hidden font-normal text-sm md:group-hover:block md:absolute md:left-full md:ml-4 md:bg-white md:text-black md:dark:bg-zinc-900 md:dark:text-white md:px-3 md:py-2 md:rounded-md md:shadow-xl md:z-50 lg:static lg:ml-0 lg:p-0 lg:shadow-none lg:bg-transparent lg:dark:bg-transparent">
+              <span
+                className="hidden font-normal text-sm md:group-hover:block md:absolute md:left-full md:ml-4 md:bg-white md:text-black md:dark:bg-zinc-900 md:dark:text-white md:px-3 md:py-2 md:rounded-md md:shadow-xl md:z-50 lg:static lg:ml-0 lg:p-0 lg:shadow-none lg:bg-transparent lg:dark:bg-transparent">
                 {link.name}
               </span>
             )}

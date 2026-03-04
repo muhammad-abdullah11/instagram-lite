@@ -12,6 +12,7 @@ export interface IUser extends Document {
     following: mongoose.Types.ObjectId[];
     posts: mongoose.Types.ObjectId[];
     savedPosts: mongoose.Types.ObjectId[];
+    likedPosts: mongoose.Types.ObjectId[];
     isPrivate: boolean;
     isVerified: boolean;
     role: "user" | "admin";
@@ -81,6 +82,12 @@ const userSchema = new Schema<IUser>(
             },
         ],
         savedPosts: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: "Post",
+            },
+        ],
+        likedPosts: [
             {
                 type: Schema.Types.ObjectId,
                 ref: "Post",

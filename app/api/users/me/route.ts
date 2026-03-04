@@ -1,0 +1,32 @@
+import { connectDB } from "@/lib/mongodb";
+import User from "@/Models/user.Model";
+import Post from "@/Models/post.Model";
+import { NextResponse } from "next/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/nextAuth";
+
+
+
+
+export async function GET(request: Request) {
+
+    await connectDB();
+    const session = await getServerSession(authOptions);
+
+    if (!session) {
+        return NextResponse.json({ error: "Unauthorized unable to fetch profile" }, { status: 401 })
+    }
+
+    try {
+        const user = await User.findById(session.user.id).select("-password");
+        if (!user) {
+            return NextResponse.json({ error: "User not found" }, { status: 404 })
+        }
+        const posts = await Post.find({ user: user._id });
+
+        return NextResponse.json({ success: true, user, posts, message: "Profile fetched successfully" }, { status: 200 });
+    } catch (error) {
+        console.error("Error fetching profile:", error);
+        return NextResponse.json({ error: "Failed to fetch profile" }, { status: 500 });
+    }
+}
