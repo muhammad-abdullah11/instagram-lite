@@ -15,7 +15,6 @@ export async function POST(req: Request) {
 
         await connectDB();
 
-        // Check if user already exists
         const userExists = await User.findOne({
             $or: [
                 { email: email.toLowerCase() },
@@ -31,12 +30,11 @@ export async function POST(req: Request) {
             );
         }
 
-        // Create new user
         const newUser = await User.create({
             fullName: name,
             username: userName.toLowerCase(),
             email: email.toLowerCase(),
-            password: password, // Password hashing is handled by the pre-save hook in user.Model.ts
+            password: password
         });
 
         return NextResponse.json(

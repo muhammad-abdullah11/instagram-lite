@@ -134,3 +134,31 @@ export async function GET(req: NextRequest) {
         );
     }
 }
+
+export async function DELETE(req: NextRequest, { params }: { params: { postId: string } }) {
+    await connectDB();
+    try {
+        const session = await getServerSession(authOptions);
+        if (!session?.user) {
+            return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+        }
+        const { postId } = params;
+        const post = await Post.findById(postId);
+        if (!post) {
+            return NextResponse.json({ error: "Post not found" }, { status: 404 });
+        }
+
+        if (post.user.toString() !== (session.user as any).id) {
+            return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+        }
+
+        await post.deleteOne();
+        return NextResponse.json({ success: true, message: "Post deleted successfully" }, { status: 200 });
+    } catch (error: any) {
+        console.error("Delete Post Error:", error);
+        return NextResponse.json(
+            { error: error.message || "Internal Server Error" },
+            { status: 500 }
+        );
+    }
+}
